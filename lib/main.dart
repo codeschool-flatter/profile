@@ -47,15 +47,42 @@ Widget user({
   );
 }
 
+Widget strong() {
+  List skills = [
+    'Education',
+    'Communication',
+    'Teamwork',
+    'Leadership',
+    'Problem Solving',
+    'Creativity',
+    'Time Management',
+    'Decision Making',
+  ];
+  return Column(children: [
+    const Text('Strong Side:'),
+    Container(
+      padding: EdgeInsets.all(8),
+      child: Text(skills[0]),
+      decoration: BoxDecoration(
+        color: Colors.greenAccent,
+        borderRadius: BorderRadius.circular(10),
+      ),
+    )
+  ]);
+}
+
 void main() {
   runApp(MaterialApp(
     home: Scaffold(
-      body: Container(
-        child: user(
-          img: 'img/avatar_f.png',
-          fullname: 'Azim Azim',
-          job: 'Student',
-        ),
+      body: Column(
+        children: [
+          user(
+            img: 'img/avatar_f.png',
+            fullname: 'Azim Azim',
+            job: 'Student',
+          ),
+          strong(),
+        ],
       ),
     ),
   ));
