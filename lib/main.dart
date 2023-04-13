@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
-Widget user() {
+Widget user({
+  required String img,
+  required String fullname,
+  required String job,
+}) {
   return Container(
     margin: EdgeInsets.all(20),
     height: 100,
     child: Row(children: [
       CircleAvatar(
         radius: 50,
-        backgroundImage: AssetImage('img/avatar.png'),
+        backgroundImage: AssetImage(img),
         backgroundColor: Colors.blueAccent,
       ),
       Padding(
@@ -15,9 +19,9 @@ Widget user() {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('data'),
-            Text('data'),
-            Text('data'),
+            Text(fullname),
+            Text(job),
+            Text('change profile'),
           ],
         ),
       )
@@ -29,7 +33,11 @@ void main() {
   runApp(MaterialApp(
     home: Scaffold(
       body: Container(
-        child: user(),
+        child: user(
+          img: 'img/avatar_f.png',
+          fullname: 'Azim Azim',
+          job: 'Student',
+        ),
       ),
     ),
   ));
