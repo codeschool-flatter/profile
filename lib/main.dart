@@ -7,15 +7,19 @@ Widget user() {
     child: Row(children: [
       CircleAvatar(
         radius: 50,
+        backgroundImage: AssetImage('img/avatar.png'),
         backgroundColor: Colors.blueAccent,
       ),
-      Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('data'),
-          Text('data'),
-          Text('data'),
-        ],
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('data'),
+            Text('data'),
+            Text('data'),
+          ],
+        ),
       )
     ]),
   );
