@@ -48,20 +48,24 @@ Widget user({
 }
 
 Widget strong(List skills) {
-  List<Widget> side = [
-    const Text('Strong Side:'),
-  ];
+  List<Widget> side = [];
   for (String skill in skills) {
     side.add(Container(
+      margin: EdgeInsets.all(4),
       padding: EdgeInsets.all(8),
       child: Text(skill),
       decoration: BoxDecoration(
         color: Colors.greenAccent,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(5),
       ),
     ));
   }
-  return Column(children: side);
+  return Column(
+    children: [
+      const Text('Strong Side:'),
+      Wrap(children: side),
+    ],
+  );
 }
 
 void main() {
