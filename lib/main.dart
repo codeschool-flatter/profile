@@ -18,10 +18,28 @@ Widget user({
         padding: const EdgeInsets.all(8.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(fullname),
-            Text(job),
-            Text('change profile'),
+            Text(
+              fullname,
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              job,
+              style: const TextStyle(
+                color: Colors.grey,
+                fontSize: 15,
+              ),
+            ),
+            const Text(
+              'change profile',
+              style: TextStyle(
+                decoration: TextDecoration.underline,
+              ),
+            ),
           ],
         ),
       )
