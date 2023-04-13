@@ -47,7 +47,21 @@ Widget user({
   );
 }
 
-Widget strong() {
+Widget strong(List skills) {
+  return Column(children: [
+    const Text('Strong Side:'),
+    Container(
+      padding: EdgeInsets.all(8),
+      child: Text(skills[2]),
+      decoration: BoxDecoration(
+        color: Colors.greenAccent,
+        borderRadius: BorderRadius.circular(10),
+      ),
+    )
+  ]);
+}
+
+void main() {
   List skills = [
     'Education',
     'Communication',
@@ -58,20 +72,6 @@ Widget strong() {
     'Time Management',
     'Decision Making',
   ];
-  return Column(children: [
-    const Text('Strong Side:'),
-    Container(
-      padding: EdgeInsets.all(8),
-      child: Text(skills[0]),
-      decoration: BoxDecoration(
-        color: Colors.greenAccent,
-        borderRadius: BorderRadius.circular(10),
-      ),
-    )
-  ]);
-}
-
-void main() {
   runApp(MaterialApp(
     home: Scaffold(
       body: Column(
@@ -81,7 +81,7 @@ void main() {
             fullname: 'Azim Azim',
             job: 'Student',
           ),
-          strong(),
+          strong(skills),
         ],
       ),
     ),
